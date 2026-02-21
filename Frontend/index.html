@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imago | Unlimited Image Processing</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-content">
+            <div class="brand">
+                <i data-lucide="aperture" class="brand-icon"></i>
+                <span>Imago</span>
+            </div>
+            <a href="https://github.com/sanemishinazugawa11/imago" target="_blank" class="github-btn">
+                <i data-lucide="github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="hero-section">
+            <h1>Your images. Your rules.</h1>
+            <p>Built because the other options were either paid or limited. <br> Free, unlimited, and lightning-fast image processing.</p>
+            <p>Convert images from JPEG to PNG and viceversa. <br> Compress JPEG,PNG images.</p>
+        </div>
+
+        <div class="workspace-card">
+            
+            <label for="fileInput" id="dropZone" class="drop-zone">
+                <div class="drop-icon-wrapper">
+                    <i data-lucide="upload" class="upload-icon"></i>
+                </div>
+                <p class="drop-title">Click to upload or drag and drop</p>
+                <p class="drop-subtitle">JPG, JPEG, or PNG (Max 10MB)</p>
+            </label>
+            
+            <input type="file" id="fileInput" accept=".jpg, .jpeg, .png" class="sr-only">
+
+            <div id="fileView" class="file-view hidden">
+                
+                <div class="file-header">
+                    <div class="file-info-badge">
+                        <i data-lucide="image" class="file-icon"></i>
+                        <span id="fileName" class="file-name">filename.jpg</span>
+                    </div>
+                    <button id="btnRemoveFile" class="icon-btn" title="Remove file">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="segmented-control">
+                    <button class="segment active" data-action="convert">Convert</button>
+                    <button class="segment" data-action="compress">Compress</button>
+                </div>
+
+                <div id="convertPanel" class="tool-panel active">
+                    <p class="panel-desc">Seamlessly flip your image format. PNGs become JPGs, and JPGs become PNGs.</p>
+                    <button id="btnConvert" class="btn btn-primary w-full">
+                        Convert Image
+                    </button>
+                </div>
+
+                <div id="compressPanel" class="tool-panel hidden">
+                    
+                    <div id="jpgSettings" class="settings-group hidden">
+                        <div class="slider-header">
+                            <label>JPEG Quality</label>
+                            <span id="jpgVal" class="val-badge">80%</span>
+                        </div>
+                        <input type="range" id="jpgSlider" class="sleek-slider" min="1" max="100" value="80">
+                    </div>
+
+                    <div id="pngSettings" class="settings-group hidden">
+                        <div class="slider-header">
+                            <label>PNG Compression (1=Best, 3=Fastest)</label>
+                            <span id="pngVal" class="val-badge">2</span>
+                        </div>
+                        <input type="range" id="pngSlider" class="sleek-slider" min="1" max="3" value="2">
+                    </div>
+
+                    <button id="btnCompress" class="btn btn-primary w-full mt-4">
+                        Compress Image
+                    </button>
+                </div>
+            </div>
+
+            <div id="statusArea" class="status-area hidden">
+                <div id="loadingState" class="state-view hidden">
+                    <i data-lucide="loader-2" class="spin loading-icon"></i>
+                    <p>Processing...</p>
+                </div>
+                
+                <div id="errorState" class="state-view error hidden">
+                    <i data-lucide="alert-triangle"></i>
+                    <p id="errorMsg">An error occurred.</p>
+                </div>
+
+                <div id="successState" class="state-view success hidden">
+                    <div class="success-icon">
+                        <i data-lucide="check"></i>
+                    </div>
+                    <h3>Done!</h3>
+                    <p>Your image is ready.</p>
+                    <a href="#" id="downloadBtn" class="btn btn-primary w-full" download>
+                        Download
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>100% Free & Open Source. Built with Go and Vanilla JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
