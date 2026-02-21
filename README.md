@@ -13,5 +13,5 @@ Free, unlimited, and lightning-fast image processing with simple, minimal UI.
 
 
 
-![alt text](<Screenshot 2026-02-21 154747.png>)
+![alt text](<Webapp-screenshot.png>)
 
