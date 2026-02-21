@@ -15,9 +15,3 @@ with simple, minimal UI.
 
 ![alt text](<Screenshot 2026-02-21 154747.png>)
 
-
-
-# Live Demo
-
-
-<video controls src="Screen Recording 2026-02-21 154633.mp4" title="Title"></video>
