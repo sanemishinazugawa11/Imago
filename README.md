@@ -1,7 +1,7 @@
 # Imago
-An Image Processing Application , Built because the other options were either paid or limited.
-Free, unlimited, and lightning-fast image processing
-with simple, minimal UI. 
+An Image Processing Application built with golang and vanilla JS, no bloating frontend, no extra dependencies.
+Built because the other options were either paid or limited.
+Free, unlimited, and lightning-fast image processing with simple, minimal UI. 
 
 
 # Guidelines to use
